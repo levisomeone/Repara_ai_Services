@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fila de moderação · Administração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="pg-dashboard">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<div class="page">
+  <header class="adm-topo">
+    <span class="adm-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></span>
+    <strong class="adm-marca">Serviços perto de você</strong>
+    <span class="adm-tag">Administração</span>
+    <span class="adm-user">Olá, Admin <a class="lnk" href="index.html">Sair</a></span>
+  </header>
+
+  <div class="adm-corpo">
+    <nav class="adm-menu" aria-label="Gerenciamento">
+      <p class="adm-menu-titulo">GERENCIAMENTO</p>
+      <a href="#" data-sem-destino><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3zM13 3h8v5h-8zM13 11h8v10h-8zM3 14h8v7H3z"/></svg>Painel</a>
+      <a href="#" aria-current="page" data-sem-destino><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9"/></svg>Fila de Moderação</a>
+      <a href="#" data-sem-destino><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M9.5 11a4 4 0 100-8 4 4 0 000 8zM21 21v-2a4 4 0 00-3-3.9"/></svg>Profissionais Ativos</a>
+      <a href="#" data-sem-destino><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 100-6 3 3 0 000 6zM12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Configurações</a>
+    </nav>
+
+    <main class="adm-conteudo" id="conteudo">
+      <p class="adm-trilha">Administração / Cadastros</p>
+      <h1>Fila de Moderação de Novos Perfis</h1>
+      <p class="adm-sub">Revise os cadastros recebidos antes de publicar os profissionais no catálogo.</p>
+
+      <div class="adm-barra">
+        <div class="adm-busca">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <label class="sr" for="busca">Buscar profissional</label>
+          <input id="busca" type="search" placeholder="Buscar por nome, categoria ou bairro...">
+        </div>
+        <button class="btn btn-p adm-add" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Adicionar Novo Profissional (Onboarding Assistido)</button>
+      </div>
+
+      <section class="adm-tabela" aria-labelledby="t-tab">
+        <div class="adm-tabela-topo">
+          <h2 id="t-tab">Cadastros aguardando análise</h2>
+          <span class="adm-contagem" id="contagem">3</span>
+          <span class="adm-ordem">Mais antigos primeiro</span>
+        </div>
+        <div class="tw" role="region" aria-labelledby="t-tab" tabindex="0">
+          <table>
+            <caption class="sr">Cadastros aguardando análise, do mais antigo para o mais recente</caption>
+            <thead>
+              <tr>
+                <th scope="col">Data<span class="so-desktop"> de Cadastro</span></th>
+                <th scope="col"><span class="so-desktop">Nome do </span>Profissional</th>
+                <th scope="col">Categoria<span class="so-menor"> · Bairro</span></th>
+                <th scope="col" class="so-desktop">Bairro</th>
+                <th scope="col" class="so-desktop">WhatsApp</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="linhas"></tbody>
+          </table>
+        </div>
+        <div class="adm-tabela-rodape"><span id="exibindo"></span><span>Página 1 de 1</span></div>
+      </section>
+
+      <div class="nota" role="note">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11v5M12 8h.01M12 21a9 9 0 100-18 9 9 0 000 18z"/></svg>
+        <span>Antes de aprovar, confira os dados de contato, a categoria e o bairro de atuação. Apenas perfis aprovados ficam visíveis no catálogo.</span>
+      </div>
+      <p class="sr" id="aviso" role="status" aria-live="polite"></p>
+    </main>
+  </div>
+</div>
+
+<dialog id="modal" aria-labelledby="mt">
+  <h2 id="mt"></h2>
+  <p class="modal-texto">O perfil não aparecerá no catálogo. Você pode registrar o motivo abaixo.</p>
+  <div class="fl">
+    <label for="motivo">Motivo <span>(opcional)</span></label>
+    <textarea class="in" id="motivo" placeholder="Ex.: dados de contato incompletos"></textarea>
+  </div>
+  <div class="modal-acoes">
+    <button class="btn btn-s" type="button" id="cancelar">Cancelar</button>
+    <button class="btn btn-perigo" type="button" id="confirmar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Confirmar rejeição</button>
+  </div>
+</dialog>
+
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

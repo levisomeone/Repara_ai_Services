@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Início · Serviços perto de você</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body class="pg-inicio">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<div class="page">
+  <div id="topbar" data-ativo="inicio" data-tabs="sim"></div>
+
+  <main class="container" id="conteudo">
+    <div class="inicio">
+      <div class="inicio-lateral">
+        <h1>Serviços perto de você</h1>
+        <a class="btn btn-s btn-bloco so-mobile" href="cadastro-cliente.html" style="margin-top:16px">Criar conta</a>
+        <div class="painel">
+          <div class="srch">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <label class="sr" for="q">Buscar profissional</label>
+            <input id="q" type="search" placeholder="Buscar eletricista, pedreiro…">
+          </div>
+          <div class="loc">
+            <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11zM12 12a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/></svg>
+            <span>Vila Mariana, São Paulo • Até 3 km</span>
+            <a href="#">Alterar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="inicio-conteudo">
+        <section class="secao" aria-labelledby="t-cat">
+          <h2 id="t-cat">Categorias Principais</h2>
+          <div class="cats" id="cats"></div>
+        </section>
+
+        <section class="secao" aria-labelledby="t-pro">
+          <h2 id="t-pro">Profissionais Perto de Você</h2>
+          <p class="sub">Mais próximos da sua localização</p>
+          <p id="res" class="sub" role="status" aria-live="polite"></p>
+          <button type="button" class="lnk" id="limpar" hidden>Limpar filtros</button>
+          <div class="lista-pro" id="lista"></div>
+          <div id="vazio" class="empty" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <p>Nenhum profissional encontrado.<br>Tente outro nome ou remova o filtro de categoria.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

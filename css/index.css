@@ -1,0 +1,45 @@
+/* index.css — estilos específicos da home (Início) */
+.inicio-lateral{}
+.painel{margin-top:16px}
+.srch{height:48px;background:var(--surface);border:1.5px solid var(--field);border-radius:12px;display:flex;align-items:center;gap:8px;padding:0 14px;color:var(--text2)}
+.srch input{flex:1;min-width:0;border:0;outline:0;font:400 16px/24px Inter,sans-serif;background:transparent;color:var(--text)}
+.srch input::placeholder{color:var(--text2);opacity:1}
+.srch:focus-within{outline:3px solid var(--primary);outline-offset:2px}
+.loc{margin-top:8px;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;line-height:20px;color:var(--text2)}
+.loc .pin{display:none;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.loc a{color:var(--primary);font-weight:600;text-decoration:underline;min-height:44px;display:inline-flex;align-items:center;padding:0 4px}
+
+.secao{margin-top:24px}
+.cats{margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px 4px}
+.cat{min-height:44px;display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 0;color:var(--text);background:none;border:0;font:inherit;cursor:pointer}
+.ci{width:56px;height:56px;border-radius:16px;background:var(--surface);border:1px solid var(--divider);display:flex;align-items:center;justify-content:center}
+.ci svg{width:28px;height:28px;fill:none;stroke:var(--primary);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ct{font-size:12px;line-height:18px;font-weight:500}
+.cat[aria-pressed="true"] .ci{border:3px solid var(--primary);background:var(--avatar)}
+.cat[aria-pressed="true"] .ct{font-weight:700;text-decoration:underline}
+#res{margin-top:8px}
+
+@media(min-width:640px){
+  .painel{margin-top:24px;display:flex;align-items:center;gap:16px}
+  .srch{flex:1}
+  .loc{margin-top:0;min-height:48px;background:var(--surface);border:1px solid var(--divider);border-radius:12px;padding:0 14px;justify-content:flex-start}
+  .loc .pin{display:block}
+  .secao{margin-top:32px}
+  .cats{margin-top:16px;gap:16px 8px}
+  .ci{width:64px;height:64px}
+  .ct{font-size:14px;line-height:20px}
+}
+@media(min-width:1024px){
+  .inicio{display:flex;gap:32px;align-items:flex-start}
+  .inicio-lateral{width:288px;flex:none}
+  .inicio-conteudo{flex:1;min-width:0}
+  .inicio-conteudo>.secao:first-child{margin-top:0}
+  .srch{flex:none}
+  .painel{margin-top:20px;display:flex;flex-direction:column;align-items:stretch;gap:12px;background:var(--surface);border:1px solid var(--divider);border-radius:16px;padding:20px}
+  .loc{flex-wrap:wrap;background:none;border:0;border-radius:0;padding:4px 0 0;min-height:0;align-items:flex-start}
+  .loc span{flex:1;min-width:0}
+  .loc a{width:100%;margin-left:26px}
+}
+
+/* Entre 1024 e 1279 px a coluna de conteúdo é estreita: cards em 1 coluna (2 colunas a partir de 1280) */
+@media(min-width:1024px) and (max-width:1279px){.inicio-conteudo .lista-pro{grid-template-columns:minmax(0,1fr)}}

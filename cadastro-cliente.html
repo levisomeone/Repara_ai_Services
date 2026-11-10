@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Criar conta · Serviços perto de você</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body class="pg-cliente">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<div class="page">
+  <div id="topbar" data-ativo="" data-tabs="nao"></div>
+
+  <main class="container centralizado" id="conteudo">
+    <a class="voltar" href="index.html" aria-label="Voltar ao início"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+    <div class="cartao">
+      <div class="cabecalho-form">
+        <h1>Criar conta</h1>
+        <p class="sub">Encontre profissionais perto de você.</p>
+      </div>
+
+      <nav class="seg" aria-label="Tipo de conta">
+        <a href="cadastro-cliente.html" aria-current="page">Sou cliente</a>
+        <a href="cadastro-profissional.html">Sou profissional</a>
+      </nav>
+
+      <form id="form-cliente" novalidate>
+        <div class="sum" id="resumo" role="alert" tabindex="-1" hidden></div>
+
+        <div class="fl">
+          <label for="nome">Nome completo <span>(obrigatório)</span></label>
+          <input class="in" id="nome" name="nome" type="text" autocomplete="name" placeholder="Digite seu nome completo">
+          <div class="err" id="e-nome" hidden></div>
+        </div>
+
+        <div class="fl">
+          <label for="email">E-mail <span>(obrigatório)</span></label>
+          <input class="in" id="email" name="email" type="email" autocomplete="email" placeholder="nome@exemplo.com">
+          <div class="err" id="e-email" hidden></div>
+        </div>
+
+        <div class="fl">
+          <label for="senha">Senha <span>(obrigatório)</span></label>
+          <div class="linha">
+            <input class="in" id="senha" name="senha" type="password" autocomplete="new-password" placeholder="Crie uma senha" aria-describedby="dica-senha">
+            <button class="mini" type="button" data-mostrar="senha" aria-pressed="false" aria-label="Mostrar senha">Mostrar</button>
+          </div>
+          <p class="dica" id="dica-senha">Mínimo de 8 caracteres</p>
+          <div class="err" id="e-senha" hidden></div>
+        </div>
+
+        <div class="fl">
+          <label for="bairro">Bairro/Distrito <span>(opcional)</span></label>
+          <select class="in" id="bairro" name="bairro" aria-describedby="dica-bairro">
+            <option value="">Selecione seu bairro ou distrito</option>
+          </select>
+          <p class="dica" id="dica-bairro">Usamos para mostrar profissionais mais próximos.</p>
+        </div>
+
+        <div class="chk-bloco">
+          <div class="chk">
+            <input type="checkbox" id="lgpd" name="lgpd">
+            <label for="lgpd">Li e aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> (LGPD). <span>(obrigatório)</span></label>
+          </div>
+          <div class="err" id="e-lgpd" hidden></div>
+        </div>
+
+        <button class="btn btn-p btn-bloco btn-form" type="submit">Criar conta</button>
+      </form>
+
+      <p class="rodape-form">Já tenho conta? <a class="lnk" href="entrar.html">Entrar</a></p>
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

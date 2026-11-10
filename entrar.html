@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entrar · Serviços perto de você</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body class="pg-entrar">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<div class="page">
+  <div id="topbar" data-ativo="" data-tabs="nao"></div>
+
+  <main class="container centralizado" id="conteudo">
+    <a class="voltar" href="index.html" aria-label="Voltar ao início"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+    <div class="cartao">
+      <div class="cabecalho-form">
+        <h1>Entrar</h1>
+        <p class="sub">Acesse sua conta para continuar.</p>
+      </div>
+
+      <form id="form-entrar" novalidate>
+        <div class="sum" id="resumo" role="alert" tabindex="-1" hidden></div>
+
+        <div class="fl">
+          <label for="email">E-mail <span>(obrigatório)</span></label>
+          <input class="in" id="email" name="email" type="email" autocomplete="email" placeholder="nome@exemplo.com">
+          <div class="err" id="e-email" hidden></div>
+        </div>
+
+        <div class="fl">
+          <label for="senha">Senha <span>(obrigatório)</span></label>
+          <div class="linha">
+            <input class="in" id="senha" name="senha" type="password" autocomplete="current-password" placeholder="Digite sua senha">
+            <button class="mini" type="button" data-mostrar="senha" aria-pressed="false" aria-label="Mostrar senha">Mostrar</button>
+          </div>
+          <div class="err" id="e-senha" hidden></div>
+        </div>
+
+        <button class="btn btn-p btn-bloco btn-form" type="submit">Entrar</button>
+      </form>
+
+      <p class="rodape-form">Ainda não tem conta? <a class="lnk" href="cadastro-cliente.html">Criar conta</a></p>
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Favoritos · Serviços perto de você</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body class="pg-favoritos">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<div class="page">
+  <div id="topbar" data-ativo="favoritos" data-tabs="sim"></div>
+
+  <main class="container" id="conteudo">
+    <h1>Favoritos</h1>
+    <p class="sub fav-sub">Profissionais que você marcou com a estrela</p>
+    <div class="lista-pro" id="lista"></div>
+    <div id="vazio" class="empty" tabindex="-1" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9L3.5 9.7l5.9-.8z"/></svg>
+      <p>Você ainda não tem favoritos.<br>Toque na estrela ao lado do nome de um profissional para salvá-lo aqui.</p>
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* dashboard.css — Painel interno: Fila de moderação (mobile, tablet e desktop) */
+.page{background:var(--bg)}
+.adm-topo{background:var(--surface);border-bottom:1px solid var(--divider);padding:12px 16px;display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.adm-logo{width:36px;height:36px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center}
+.adm-logo svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.adm-marca{font-size:18px;line-height:26px}
+.adm-tag{background:var(--avatar);color:var(--primary);font-size:14px;line-height:20px;font-weight:600;padding:2px 10px;border-radius:999px}
+.adm-user{margin-left:auto;font-size:14px;line-height:20px;display:flex;align-items:center}
+
+.adm-corpo{flex:1;display:flex;flex-direction:column}
+.adm-menu{display:flex;flex-direction:row;gap:8px;padding:16px 16px 0;overflow-x:auto}
+.adm-menu-titulo{display:none}
+.adm-menu a{flex:none;min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 14px;border-radius:12px;border:1px solid var(--divider);background:var(--surface);color:var(--text);font-size:14px;line-height:20px;font-weight:500;text-decoration:none}
+.adm-menu a[aria-current="page"]{background:var(--primary);border-color:var(--primary);color:var(--on-primary);font-weight:600}
+.adm-menu svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.adm-conteudo{flex:1;min-width:0;padding:24px 16px 32px;display:flex;flex-direction:column;gap:16px}
+.adm-trilha,.adm-sub{font-size:14px;line-height:20px;color:var(--text2)}
+.adm-trilha{margin-bottom:-12px}
+.adm-sub{font-size:16px;line-height:24px;margin-top:-12px}
+
+.adm-barra{display:flex;flex-direction:column;gap:12px}
+.adm-busca{height:48px;background:var(--surface);border:1.5px solid var(--field);border-radius:12px;display:flex;align-items:center;gap:8px;padding:0 14px;color:var(--text2)}
+.adm-busca svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.adm-busca input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:400 14px/20px Inter,sans-serif;color:var(--text)}
+.adm-busca input::placeholder{color:var(--text2);opacity:1}
+.adm-busca:focus-within{outline:3px solid var(--primary);outline-offset:2px}
+.adm-add{font-size:14px;line-height:18px;align-self:flex-start;text-align:left}
+.adm-add svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+
+.adm-tabela{background:var(--surface);border:1px solid var(--divider);border-radius:16px;overflow:hidden}
+.adm-tabela-topo{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:16px 16px 12px}
+.adm-contagem{background:var(--warn-bg);color:var(--warn-text);border-radius:999px;padding:2px 10px;font-size:14px;line-height:20px;font-weight:600}
+.adm-ordem{margin-left:auto;font-size:14px;line-height:20px;color:var(--text2)}
+.tw{overflow-x:auto}
+.tw:focus-visible{outline:3px solid var(--primary);outline-offset:-3px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px;line-height:20px}
+th{text-align:left;font-weight:600;padding:12px 10px;background:#FAF6EF;white-space:nowrap}
+td{padding:8px 10px;border-top:1px solid var(--divider);height:72px;vertical-align:middle}
+td .nome{font-weight:600}
+td .sec{color:var(--text2)}
+.so-desktop{display:none}
+.so-menor{display:inline}
+td .so-menor{display:block}
+.st{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-weight:600;white-space:nowrap}
+.st svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.st:focus{outline:none}
+.st-pend{background:var(--warn-bg);color:var(--warn-text)}
+.st-apr{background:var(--avatar);color:var(--primary)}
+.st-rej{background:#F9DEDC;color:#8E1F18}
+.acoes{display:flex;gap:8px}
+.ba,.br{min-height:40px;padding:0 12px;border-radius:12px;font:600 14px/20px Inter,sans-serif;display:inline-flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap}
+.ba svg,.br svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ba{background:var(--primary);color:var(--on-primary);border:1.5px solid var(--primary)}
+.br{background:var(--surface);color:var(--error);border:1.5px solid var(--error)}
+.adm-tabela-rodape{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;border-top:1px solid var(--divider);font-size:14px;line-height:20px;color:var(--text2)}
+.nota{margin-top:0;background:var(--surface)}
+
+dialog{border:0;border-radius:20px;padding:28px;width:calc(100% - 32px);max-width:520px;margin:auto;color:var(--text);background:var(--surface)}
+dialog::backdrop{background:rgba(28,28,26,.55)}
+dialog h2{font-size:22px;line-height:30px}
+.modal-texto{margin-top:12px;color:var(--text2)}
+.modal-acoes{display:flex;gap:12px;justify-content:flex-end;margin-top:20px;flex-wrap:wrap}
+.btn-perigo{background:var(--error);border-color:var(--error);color:#fff}
+.btn-perigo svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+
+@media(min-width:640px){
+  .adm-topo{padding:12px 32px}
+  .adm-menu{padding:24px 32px 0;flex-wrap:wrap;overflow:visible}
+  .adm-conteudo{padding:24px 32px 48px}
+}
+@media(min-width:1024px){
+  .adm-topo{height:64px;padding:0 24px}
+  .adm-corpo{flex-direction:row}
+  .adm-menu{width:240px;flex:none;flex-direction:column;gap:4px;padding:24px 16px;background:var(--surface);border-right:1px solid var(--divider)}
+  .adm-menu-titulo{display:block;font-size:14px;line-height:20px;font-weight:600;letter-spacing:.06em;color:var(--text2);padding:0 12px 8px}
+  .adm-menu a{border-color:transparent;background:transparent}
+  .adm-conteudo{padding:24px 32px 48px}
+  .adm-barra{flex-direction:row;align-items:center;gap:16px}
+  .adm-busca{flex:1}
+  .adm-add{min-height:48px}
+  table{min-width:0}
+  td{height:56px}
+  .so-desktop{display:inline}
+  th.so-desktop{display:table-cell}
+  td.so-desktop{display:table-cell}
+  .so-menor,td .so-menor{display:none}
+}

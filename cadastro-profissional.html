@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perfil profissional · Serviços perto de você</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body class="pg-profissional">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<div class="page">
+  <div id="topbar" data-ativo="" data-tabs="nao"></div>
+
+  <main class="container centralizado" id="conteudo">
+    <a class="voltar" href="index.html" aria-label="Voltar ao início"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+    <div class="cartao">
+      <div class="cabecalho-form">
+        <h1>Crie seu Perfil Profissional</h1>
+        <p class="sub">Mostre seu serviço para quem está perto de você.</p>
+      </div>
+
+      <nav class="seg" aria-label="Tipo de conta">
+        <a href="cadastro-cliente.html">Sou cliente</a>
+        <a href="cadastro-profissional.html" aria-current="page">Sou profissional</a>
+      </nav>
+
+      <form id="form-profissional" novalidate>
+        <div class="sum" id="resumo" role="alert" tabindex="-1" hidden></div>
+
+        <h2 class="secao-form">Seus dados</h2>
+        <div class="grade">
+          <div class="fl">
+            <label for="nome">Nome completo <span>(obrigatório)</span></label>
+            <input class="in" id="nome" name="nome" type="text" autocomplete="name" placeholder="Digite seu nome completo">
+            <div class="err" id="e-nome" hidden></div>
+          </div>
+          <div class="fl">
+            <label for="social">Nome social/comercial <span>(opcional)</span></label>
+            <input class="in" id="social" name="social" type="text" autocomplete="organization" placeholder="Como você prefere ser chamado(a)">
+          </div>
+          <div class="fl">
+            <label for="whatsapp">WhatsApp com DDD <span>(obrigatório)</span></label>
+            <input class="in" id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" aria-describedby="dica-wpp">
+            <p class="dica" id="dica-wpp">Será exibido aos clientes no catálogo.</p>
+            <div class="err" id="e-whatsapp" hidden></div>
+          </div>
+          <div class="fl">
+            <label for="email">E-mail <span>(obrigatório)</span></label>
+            <input class="in" id="email" name="email" type="email" autocomplete="email" placeholder="nome@exemplo.com">
+            <div class="err" id="e-email" hidden></div>
+          </div>
+          <div class="fl">
+            <label for="senha">Senha <span>(obrigatório)</span></label>
+            <div class="linha">
+              <input class="in" id="senha" name="senha" type="password" autocomplete="new-password" placeholder="Crie uma senha" aria-describedby="dica-senha">
+              <button class="mini" type="button" data-mostrar="senha" aria-pressed="false" aria-label="Mostrar senha">Mostrar</button>
+            </div>
+            <p class="dica" id="dica-senha">Mínimo de 8 caracteres</p>
+            <div class="err" id="e-senha" hidden></div>
+          </div>
+        </div>
+
+        <h2 class="secao-form">Seu serviço</h2>
+        <div class="grade">
+          <div class="fl">
+            <label for="categoria">Categoria principal de serviço <span>(obrigatório)</span></label>
+            <select class="in" id="categoria" name="categoria">
+              <option value="">Selecione uma categoria</option>
+            </select>
+            <div class="err" id="e-categoria" hidden></div>
+          </div>
+          <div class="fl">
+            <label for="bairro">Bairro/Distrito onde atua <span>(obrigatório)</span></label>
+            <select class="in" id="bairro" name="bairro">
+              <option value="">Selecione seu bairro ou distrito</option>
+            </select>
+            <div class="err" id="e-bairro" hidden></div>
+          </div>
+          <div class="fl largo">
+            <label for="descricao">Breve descrição do seu serviço <span>(opcional)</span></label>
+            <textarea class="in" id="descricao" name="descricao" maxlength="300" placeholder="Conte quais serviços você oferece." aria-describedby="contador"></textarea>
+            <p class="dica contador" id="contador">0/300</p>
+          </div>
+        </div>
+
+        <div class="chk-bloco">
+          <div class="chk">
+            <input type="checkbox" id="lgpd" name="lgpd">
+            <label for="lgpd">Autorizo a exibição pública dos meus dados de contato no catálogo (LGPD). <span>(obrigatório para enviar o cadastro)</span></label>
+          </div>
+          <div class="err" id="e-lgpd" hidden></div>
+        </div>
+
+        <div class="nota" role="note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11v5M12 8h.01M12 21a9 9 0 100-18 9 9 0 000 18z"/></svg>
+          <span>Seu perfil será analisado antes de aparecer no catálogo.</span>
+        </div>
+
+        <button class="btn btn-p btn-bloco btn-form" type="submit">Enviar cadastro</button>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
